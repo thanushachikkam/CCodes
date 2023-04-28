@@ -1,0 +1,52 @@
+#include<stdio.h>
+//part1
+//defining a function to find i'th least significant digit
+int findDigit(int x,int i){
+    int p;
+    while(i--){ 
+        if(x==0){p=-1;}
+        else{ p=x%10;
+        x/=10;}
+        
+    }
+    return p;
+
+}
+int main(){
+    int x,i;
+    printf("Write x : ");
+    scanf(" %d",&x);
+    int n=x;//copying the value of x to n
+    int m=x;//copying the value of x to m
+    int o=x;//copyig the value of x to o
+    printf("Write i : ");
+    scanf(" %d", &i);
+    printf("Output: %d",findDigit(x,i));//function calling
+
+
+//part2 
+//find whether given integer is palindrome or not
+//to find length of the integer
+int l=1;
+while(x/10){
+    l++;
+    x/=10;
+}
+int c=0;
+for(int j =1;j<=(l/2);j++){
+    int k=(l-j+1);
+    x=o;
+    m=o;
+    if(findDigit(x,j)!=findDigit(m,k)){
+        printf("\n%d is not a palindrome",n);
+        c++;
+        break;
+    }
+    
+
+}
+if(c==0){
+    printf("\n%d is a palindrome",n);
+}
+return 0;
+}
